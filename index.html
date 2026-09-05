@@ -1,112 +1,136 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ur">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For My Favorite Person 💖</title>
+    <title>2 Years Celebration Memory Book 💖</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Poppins:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
+            user-select: none;
         }
 
-
         body {
-            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #feada6 100%);
+            background: linear-gradient(-45deg, #ff758c, #ff7eb3, #fecfef, #feada6);
+            background-size: 400% 400%;
+            animation: gradientBG 12s ease infinite;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             margin: 0;
-            padding: 20px 10px;
+            padding: 15px;
             font-family: 'Poppins', sans-serif;
             overflow-x: hidden;
             position: relative;
         }
 
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
 
-        /* Romantic Floating Background Elements */
-        .heart-bg {
+        /* Floating Background Particles */
+        .particle {
             position: fixed;
             top: -10vh;
-            font-size: 22px;
-            opacity: 0.5;
-            animation: fall 7s linear infinite;
-            z-index: 0;
+            font-size: 24px;
             pointer-events: none;
+            animation: floatUp 8s linear infinite;
+            z-index: 0;
+            filter: drop-shadow(0 0 8px rgba(255, 105, 180, 0.6));
         }
 
-
-        @keyframes fall {
-            0% { transform: translateY(0) rotate(0deg); opacity: 0.7; }
-            100% { transform: translateY(105vh) rotate(360deg); opacity: 0; }
+        @keyframes floatUp {
+            0% { transform: translateY(0) rotate(0deg) scale(0.8); opacity: 0.9; }
+            50% { opacity: 1; }
+            100% { transform: translateY(110vh) rotate(360deg) scale(1.2); opacity: 0; }
         }
 
+        /* Interactive Cursor Heart Trail */
+        .trail-heart {
+            position: fixed;
+            font-size: 18px;
+            pointer-events: none;
+            animation: fadeOut 1s forwards;
+            z-index: 999;
+        }
 
-        .container {
-            background: rgba(255, 240, 245, 0.93);
-            backdrop-filter: blur(12px);
+        @keyframes fadeOut {
+            0% { opacity: 1; transform: scale(1) translateY(0); }
+            100% { opacity: 0; transform: scale(1.8) translateY(-20px); }
+        }
+
+        /* Card Container */
+        .card-container {
+            background: rgba(255, 240, 245, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             padding: 30px 20px;
-            border-radius: 25px;
-            box-shadow: 0 15px 35px rgba(255, 105, 180, 0.35);
-            border: 2px solid rgba(255, 182, 193, 0.9);
+            border-radius: 30px;
+            box-shadow: 0 20px 50px rgba(214, 51, 132, 0.35);
+            border: 2px solid rgba(255, 255, 255, 0.8);
             text-align: center;
-            max-width: 520px;
+            max-width: 500px;
             width: 100%;
             position: relative;
-            z-index: 1;
-            margin: auto;
+            z-index: 10;
+            min-height: 520px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-
-        /* Lock Screen */
+        /* Lock Screen Styling */
         .lock-icon {
-            font-size: 50px;
+            font-size: 60px;
             margin-bottom: 10px;
-            animation: pulse 1.5s infinite;
+            display: inline-block;
+            animation: heartPulse 1.2s ease infinite;
         }
 
-
-        @keyframes pulse {
+        @keyframes heartPulse {
             0% { transform: scale(1); }
-            50% { transform: scale(1.15); }
-            100% { transform: scale(1); }
+            15% { transform: scale(1.25); }
+            30% { transform: scale(1); }
+            45% { transform: scale(1.15); }
+            60% { transform: scale(1); }
         }
-
 
         h2 {
-            color: #d63384;
+            background: linear-gradient(45deg, #d63384, #e84393);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             margin-bottom: 8px;
-            font-size: 24px;
-            font-weight: 600;
+            font-size: 26px;
+            font-weight: 700;
         }
-
 
         p.sub-title {
-            color: #8e44ad;
+            color: #6c5ce7;
             font-size: 14px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
-
         .lock-screen input {
-            padding: 12px 20px;
-            font-size: 18px;
+            padding: 14px 22px;
+            font-size: 20px;
             border: 2px solid #ff69b4;
             border-radius: 30px;
             outline: none;
             text-align: center;
-            margin: 15px 0;
-            width: 80%;
-            background: #fff0f5;
+            margin: 10px 0 20px 0;
+            width: 85%;
+            background: rgba(255, 255, 255, 0.9);
             color: #d63384;
-            letter-spacing: 2px;
-            box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+            letter-spacing: 3px;
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.15);
         }
 
-
         .btn {
-            background: linear-gradient(45deg, #ff758c, #ff7eb3);
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
             color: white;
             border: none;
             padding: 12px 35px;
@@ -114,45 +138,52 @@
             font-weight: bold;
             border-radius: 30px;
             cursor: pointer;
-            box-shadow: 0 5px 15px rgba(255, 117, 140, 0.4);
+            box-shadow: 0 8px 25px rgba(255, 65, 108, 0.4);
             transition: all 0.3s ease;
         }
 
-
         .btn:hover {
-            transform: translateY(-2px) scale(1.05);
-            box-shadow: 0 8px 20px rgba(255, 117, 140, 0.6);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 30px rgba(255, 65, 108, 0.6);
         }
-
 
         #error-msg {
             color: #e84393;
-            font-size: 13px;
-            margin-top: 12px;
+            font-size: 14px;
+            margin-top: 15px;
             display: none;
             font-weight: bold;
         }
 
-
-        /* Content Screen */
+        /* Slides Styling */
         .hidden {
-            display: none;
+            display: none !important;
         }
 
+        .slide {
+            animation: fadeIn 0.6s ease-in-out forwards;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.92); }
+            to { opacity: 1; transform: scale(1); }
+        }
 
         .badge {
-            background: linear-gradient(45deg, #ffe6eb, #ffd1dc);
-            color: #c2185b;
-            padding: 8px 18px;
+            background: linear-gradient(45deg, #ff758c, #ff7eb3);
+            color: white;
+            padding: 8px 20px;
             border-radius: 20px;
-            font-size: 15px;
+            font-size: 14px;
             font-weight: bold;
-            display: inline-block;
             margin-bottom: 15px;
-            border: 1px dashed #ff758c;
-            box-shadow: 0 2px 8px rgba(255, 117, 140, 0.2);
+            box-shadow: 0 4px 15px rgba(255, 117, 140, 0.4);
         }
-
 
         .urdu-text {
             font-family: 'Noto Nastaliq Urdu', serif;
@@ -161,138 +192,263 @@
             line-height: 2.3;
             font-size: 17px;
             color: #881337;
-            background: #fff0f5;
-            padding: 15px 12px;
-            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 18px;
+            border-radius: 20px;
             margin: 15px 0;
-            border-right: 4px solid #ff69b4;
-            border-left: 4px solid #ff69b4;
+            border: 1px solid rgba(255, 182, 193, 0.8);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            width: 100%;
         }
 
-
-        .english-text {
-            text-align: left;
+        .english-box {
+            text-align: center;
             line-height: 1.8;
             color: #4a4a4a;
-            font-size: 14px;
+            font-size: 15px;
             background: rgba(255, 255, 255, 0.85);
-            padding: 18px 15px;
-            border-radius: 15px;
+            padding: 20px;
+            border-radius: 20px;
             margin: 15px 0;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(255, 182, 193, 0.8);
+            width: 100%;
         }
 
-
-        .english-text p {
-            margin: 10px 0;
+        /* Cake & Celebration Slide */
+        .cake-container {
+            font-size: 80px;
+            margin: 20px 0;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s;
         }
 
+        .cake-container:hover {
+            transform: scale(1.1);
+        }
 
-        .highlight-quote {
-            text-align: center;
-            font-style: italic;
+        .confetti {
+            font-size: 30px;
+            position: absolute;
+            animation: bounce 1s infinite alternate;
+        }
+
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-15px); }
+        }
+
+        /* Navigation Buttons */
+        .nav-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+            width: 100%;
+        }
+
+        .nav-btn {
+            background: rgba(255, 117, 140, 0.2);
             color: #be185d;
-            font-weight: 600;
-            background: #ffe4e6;
-            padding: 12px;
-            border-radius: 12px;
-            margin: 15px 0;
+            border: 1px solid #ff758c;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
         }
 
+        .nav-btn:hover {
+            background: #ff758c;
+            color: white;
+        }
 
-        .footer-note {
-            margin-top: 20px;
-            font-size: 16px;
+        .slide-indicator {
+            font-size: 13px;
+            color: #be185d;
             font-weight: bold;
-            color: #d63384;
+        }
+
+        /* Photo Frame Placeholder */
+        .photo-card {
+            background: white;
+            padding: 15px;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            margin: 15px 0;
+            font-size: 55px;
         }
     </style>
 </head>
 <body>
 
+    <!-- Background Particles -->
+    <div class="particle" style="left: 10%; animation-delay: 0s;">💖</div>
+    <div class="particle" style="left: 25%; animation-delay: 2.5s;">✨</div>
+    <div class="particle" style="left: 45%; animation-delay: 5s;">🌸</div>
+    <div class="particle" style="left: 70%; animation-delay: 1.5s;">💕</div>
+    <div class="particle" style="left: 88%; animation-delay: 3.5s;">🎈</div>
 
-    <!-- Floating Background Elements -->
-    <div class="heart-bg" style="left: 10%; animation-delay: 0s;">💖</div>
-    <div class="heart-bg" style="left: 25%; animation-delay: 2s;">💕</div>
-    <div class="heart-bg" style="left: 45%; animation-delay: 4s;">🌸</div>
-    <div class="heart-bg" style="left: 65%; animation-delay: 1s;">✨</div>
-    <div class="heart-bg" style="left: 85%; animation-delay: 3s;">💗</div>
+    <div class="card-container">
 
-
-    <!-- Password Screen -->
-    <div id="lockScreen" class="container">
-        <div class="lock-icon">🔒💖</div>
-        <h2>Secret Lock</h2>
-        <p class="sub-title">Enter the secret passcode to unlock 🔑</p>
-        <input type="password" id="passwordInput" placeholder="Password...">
-        <br>
-        <button class="btn" onclick="checkPassword()">Unlock 💌</button>
-        <p id="error-msg">Galt password hai! Dobara try karo 🙈</p>
-    </div>
-
-
-    <!-- Main Content Screen -->
-    <div id="mainContent" class="container hidden">
-        <div class="badge">✨ Almost 2 Years Completed ✨</div>
-        <h1 style="color: #be185d; font-size: 22px; margin: 0 0 10px 0;">Happy 2 Years Together! 💖</h1>
-
-
-        <!-- Urdu Shayari Section -->
-        <div class="urdu-text">
-            *_نبھانا جس کو کہتے ہیں وہ کچھ ہی لوگوں کو آتا ہے_*🫵🫶👑<br>
-            *_بڑا آسان ہے کہنا مجھے تم سے سچی دوستی ہے_*🥺🥰🫶👀
+        <!-- LOCK SCREEN -->
+        <div id="lockScreen" class="slide">
+            <div class="lock-icon">🔒💖</div>
+            <h2>Secret Memory Box</h2>
+            <p class="sub-title">Enter passcode to unlock celebration 🔑</p>
+            <input type="password" id="passwordInput" placeholder="Passcode...">
+            <br>
+            <button class="btn" onclick="checkPassword()">Unlock Story 💌</button>
+            <p id="error-msg">Galt password hai! Dobara try karo 🙈</p>
         </div>
 
-
-        <!-- English Message Section -->
-        <div class="english-text">
-            <p><strong>Friends are not just people,</strong> they are 💗🌝🤏 memories, laughter, tears, late-night talks, 🫀😍🪷 crazy moments, and silent support.</p>
+        <!-- MAIN SLIDES SECTION -->
+        <div id="mainStory" class="hidden" style="display: flex; flex-direction: column; height: 100%;">
             
-            <p>💛 They know your past, stand with you in the present, and believe in your future. 😍😘💐</p>
-
-
-            <p>🌸 With friends, even the smallest moments become beautiful stories. 🤗🥳🫠</p>
-
-
-            <div class="highlight-quote">
-                🤍 Thank you for being my safe place, my happiness, my strength, and my forever vibe. 🥀🤩👥
+            <!-- SLIDE 1: Welcome & Intro -->
+            <div id="slide1" class="slide">
+                <div class="badge">✨ Slide 1 / 5 ✨</div>
+                <div class="photo-card">📸 💖 🥂</div>
+                <h2 style="font-size: 22px; color: #be185d;">Happy 2 Years Together!</h2>
+                <div class="urdu-text">
+                    *_نبھانا جس کو کہتے ہیں وہ کچھ ہی لوگوں کو آتا ہے_*🫵🫶👑<br>
+                    *_بڑا آسان ہے کہنا مجھے تم سے سچی دوستی ہے_*🥺🥰🫶👀
+                </div>
             </div>
 
+            <!-- SLIDE 2: Cake Cutting Celebration -->
+            <div id="slide2" class="slide hidden">
+                <div class="badge">🎂 Celebration Time! 🎂</div>
+                <h2 style="font-size: 20px; color: #be185d;">Press Button to Cut Cake! 🎉</h2>
+                
+                <div class="cake-container" id="cakeElement" onclick="cutCake()">
+                    🎂
+                </div>
+                <p id="cakeStatus" style="color: #d63384; font-weight: bold; font-size: 15px;">Click on Cake or Button below! 👇</p>
+                
+                <button class="btn" onclick="cutCake()" style="margin-top: 10px;">Cut The Cake! 🔪🎂</button>
+            </div>
 
-            <p>🫂 No matter how life changes, real friends stay the same. 🥺🫵🌜</p>
+            <!-- SLIDE 3: Cute Lines -->
+            <div id="slide3" class="slide hidden">
+                <div class="badge">💌 Special Words 💌</div>
+                <div class="english-box">
+                    <p><strong>Friends are not just people,</strong> they are 💗🌝🤏 memories, laughter, tears, late-night talks, 🫀😍🪷 crazy moments, and silent support.</p>
+                    <p style="margin-top: 10px;">💛 They know your past, stand with you in the present, and believe in your future. 😍😘💐</p>
+                </div>
+            </div>
 
+            <!-- SLIDE 4: Emotional Message -->
+            <div id="slide4" class="slide hidden">
+                <div class="badge">🌷 Safe Place 🌷</div>
+                <div class="photo-card" style="font-size: 45px;">🌸 🫂 🕯️</div>
+                <div class="english-box">
+                    <p>🌸 With friends, even the smallest moments become beautiful stories. 🤗🥳🫠</p>
+                    <p style="color: #be185d; font-weight: bold; margin-top: 10px;">
+                        🤍 Thank you for being my safe place, my happiness, my strength, and my forever vibe. 🥀🤩👥
+                    </p>
+                </div>
+            </div>
 
-            <p>✨ Forever thankful for friends like you. 💞👯‍♀️🌈</p>
+            <!-- SLIDE 5: Ending Wishes -->
+            <div id="slide5" class="slide hidden">
+                <div class="badge">🌙 Forever & Always 🌙</div>
+                <div class="urdu-text">
+                    🌙💞 *_دوستی ہمیشہ کے لیے_* 💞🌙<br>
+                    ✨ *_دوست وہ نعمت ہوتے ہیں جو زندگی کو خوبصورت بنا دیتے ہیں_*🤌🏻🌼🌝<br>
+                    🤍 *_جو ہنسی میں ساتھ دیں، اور آنسوؤں میں سہارا بنیں_*🥹🪷🫀
+                </div>
+                <p style="font-size: 18px; font-weight: bold; color: #be185d; margin-top: 10px;">
+                    Here's to 2 Years & Forever to Go! 🥂💖✨
+                </p>
+            </div>
+
+            <!-- SLIDE NAVIGATION CONTROLS -->
+            <div class="nav-controls">
+                <button class="nav-btn" onclick="changeSlide(-1)" id="prevBtn">⬅️ Prev</button>
+                <span class="slide-indicator" id="slideNum">1 of 5</span>
+                <button class="nav-btn" onclick="changeSlide(1)" id="nextBtn">Next ➡️</button>
+            </div>
+
         </div>
 
-
-        <!-- Bottom Urdu Wish Section -->
-        <div class="urdu-text">
-            🌙💞 *_دوستی ہمیشہ کے لیے_* 💞🌙<br>
-            ✨ *_دوست وہ نعمت ہوتے ہیں جو زندگی کو خوبصورت بنا دیتے ہیں_*🤌🏻🌼🌝<br>
-            🤍 *_جو ہنسی میں ساتھ دیں، اور آنسوؤں میں سہارا بنیں_*🥹🪷🫀
-        </div>
-
-
-        <div class="footer-note">
-            Here's to 2 Years and Forever to Go! 🥂💖
-        </div>
     </div>
 
-
     <script>
+        let currentSlide = 1;
+        const totalSlides = 5;
+
+        // Password Verification
         function checkPassword() {
             const correctPassword = "2710"; 
             const userPassword = document.getElementById("passwordInput").value;
             const errorMsg = document.getElementById("error-msg");
 
-
             if (userPassword === correctPassword) {
                 document.getElementById("lockScreen").classList.add("hidden");
-                document.getElementById("mainContent").classList.remove("hidden");
+                document.getElementById("mainStory").classList.remove("hidden");
+                updateSlideView();
             } else {
                 errorMsg.style.display = "block";
             }
+        }
+
+        // Slide Navigation
+        function changeSlide(direction) {
+            currentSlide += direction;
+            if (currentSlide < 1) currentSlide = 1;
+            if (currentSlide > totalSlides) currentSlide = totalSlides;
+            updateSlideView();
+        }
+
+        function updateSlideView() {
+            for (let i = 1; i <= totalSlides; i++) {
+                document.getElementById(`slide${i}`).classList.add("hidden");
+            }
+            document.getElementById(`slide${currentSlide}`).classList.remove("hidden");
+            document.getElementById("slideNum").innerText = `${currentSlide} of ${totalSlides}`;
+
+            // Button States
+            document.getElementById("prevBtn").style.visibility = currentSlide === 1 ? "hidden" : "visible";
+            document.getElementById("nextBtn").style.visibility = currentSlide === totalSlides ? "hidden" : "visible";
+        }
+
+        // Cake Cutting Animation
+        function cutCake() {
+            const cake = document.getElementById("cakeElement");
+            const status = document.getElementById("cakeStatus");
+            cake.innerHTML = "🍰🎉🥳🎈";
+            status.innerHTML = "Yay!! Cake Cut Hogaya! Happy 2 Years Anniversary! 🥳💖✨";
+            
+            // Generate Fireworks / Confetti Hearts
+            for(let i=0; i<15; i++) {
+                setTimeout(() => {
+                    createHeart(window.innerWidth/2 + (Math.random()*200 - 100), window.innerHeight/2 + (Math.random()*200 - 100));
+                }, i*100);
+            }
+        }
+
+        // Heart Trail Effect
+        document.addEventListener('mousemove', function(e) {
+            createHeart(e.clientX, e.clientY);
+        });
+
+        document.addEventListener('touchmove', function(e) {
+            createHeart(e.touches[0].clientX, e.touches[0].clientY);
+        });
+
+        function createHeart(x, y) {
+            const heart = document.createElement('span');
+            heart.className = 'trail-heart';
+            const emojis = ['💖', '🍰', '✨', '🎈', '🌸', '🥳'];
+            heart.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+            heart.style.left = x + 'px';
+            heart.style.top = y + 'px';
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 1000);
         }
     </script>
 </body>
