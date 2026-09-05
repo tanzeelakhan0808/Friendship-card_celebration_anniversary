@@ -1,0 +1,299 @@
+﻿<!DOCTYPE html>
+<html lang="ur">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Favorite Person 💖</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Poppins:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #feada6 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 20px 10px;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+
+        /* Romantic Floating Background Elements */
+        .heart-bg {
+            position: fixed;
+            top: -10vh;
+            font-size: 22px;
+            opacity: 0.5;
+            animation: fall 7s linear infinite;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+
+        @keyframes fall {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0.7; }
+            100% { transform: translateY(105vh) rotate(360deg); opacity: 0; }
+        }
+
+
+        .container {
+            background: rgba(255, 240, 245, 0.93);
+            backdrop-filter: blur(12px);
+            padding: 30px 20px;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(255, 105, 180, 0.35);
+            border: 2px solid rgba(255, 182, 193, 0.9);
+            text-align: center;
+            max-width: 520px;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+            margin: auto;
+        }
+
+
+        /* Lock Screen */
+        .lock-icon {
+            font-size: 50px;
+            margin-bottom: 10px;
+            animation: pulse 1.5s infinite;
+        }
+
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+            100% { transform: scale(1); }
+        }
+
+
+        h2 {
+            color: #d63384;
+            margin-bottom: 8px;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+
+        p.sub-title {
+            color: #8e44ad;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+
+        .lock-screen input {
+            padding: 12px 20px;
+            font-size: 18px;
+            border: 2px solid #ff69b4;
+            border-radius: 30px;
+            outline: none;
+            text-align: center;
+            margin: 15px 0;
+            width: 80%;
+            background: #fff0f5;
+            color: #d63384;
+            letter-spacing: 2px;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+
+        .btn {
+            background: linear-gradient(45deg, #ff758c, #ff7eb3);
+            color: white;
+            border: none;
+            padding: 12px 35px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 117, 140, 0.4);
+            transition: all 0.3s ease;
+        }
+
+
+        .btn:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 8px 20px rgba(255, 117, 140, 0.6);
+        }
+
+
+        #error-msg {
+            color: #e84393;
+            font-size: 13px;
+            margin-top: 12px;
+            display: none;
+            font-weight: bold;
+        }
+
+
+        /* Content Screen */
+        .hidden {
+            display: none;
+        }
+
+
+        .badge {
+            background: linear-gradient(45deg, #ffe6eb, #ffd1dc);
+            color: #c2185b;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 15px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+            border: 1px dashed #ff758c;
+            box-shadow: 0 2px 8px rgba(255, 117, 140, 0.2);
+        }
+
+
+        .urdu-text {
+            font-family: 'Noto Nastaliq Urdu', serif;
+            direction: rtl;
+            text-align: center;
+            line-height: 2.3;
+            font-size: 17px;
+            color: #881337;
+            background: #fff0f5;
+            padding: 15px 12px;
+            border-radius: 15px;
+            margin: 15px 0;
+            border-right: 4px solid #ff69b4;
+            border-left: 4px solid #ff69b4;
+        }
+
+
+        .english-text {
+            text-align: left;
+            line-height: 1.8;
+            color: #4a4a4a;
+            font-size: 14px;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 18px 15px;
+            border-radius: 15px;
+            margin: 15px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+        }
+
+
+        .english-text p {
+            margin: 10px 0;
+        }
+
+
+        .highlight-quote {
+            text-align: center;
+            font-style: italic;
+            color: #be185d;
+            font-weight: 600;
+            background: #ffe4e6;
+            padding: 12px;
+            border-radius: 12px;
+            margin: 15px 0;
+        }
+
+
+        .footer-note {
+            margin-top: 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #d63384;
+        }
+    </style>
+</head>
+<body>
+
+
+    <!-- Floating Background Elements -->
+    <div class="heart-bg" style="left: 10%; animation-delay: 0s;">💖</div>
+    <div class="heart-bg" style="left: 25%; animation-delay: 2s;">💕</div>
+    <div class="heart-bg" style="left: 45%; animation-delay: 4s;">🌸</div>
+    <div class="heart-bg" style="left: 65%; animation-delay: 1s;">✨</div>
+    <div class="heart-bg" style="left: 85%; animation-delay: 3s;">💗</div>
+
+
+    <!-- Password Screen -->
+    <div id="lockScreen" class="container">
+        <div class="lock-icon">🔒💖</div>
+        <h2>Secret Lock</h2>
+        <p class="sub-title">Enter the secret passcode to unlock 🔑</p>
+        <input type="password" id="passwordInput" placeholder="Password...">
+        <br>
+        <button class="btn" onclick="checkPassword()">Unlock 💌</button>
+        <p id="error-msg">Galt password hai! Dobara try karo 🙈</p>
+    </div>
+
+
+    <!-- Main Content Screen -->
+    <div id="mainContent" class="container hidden">
+        <div class="badge">✨ Almost 2 Years Completed ✨</div>
+        <h1 style="color: #be185d; font-size: 22px; margin: 0 0 10px 0;">Happy 2 Years Together! 💖</h1>
+
+
+        <!-- Urdu Shayari Section -->
+        <div class="urdu-text">
+            *_نبھانا جس کو کہتے ہیں وہ کچھ ہی لوگوں کو آتا ہے_*🫵🫶👑<br>
+            *_بڑا آسان ہے کہنا مجھے تم سے سچی دوستی ہے_*🥺🥰🫶👀
+        </div>
+
+
+        <!-- English Message Section -->
+        <div class="english-text">
+            <p><strong>Friends are not just people,</strong> they are 💗🌝🤏 memories, laughter, tears, late-night talks, 🫀😍🪷 crazy moments, and silent support.</p>
+            
+            <p>💛 They know your past, stand with you in the present, and believe in your future. 😍😘💐</p>
+
+
+            <p>🌸 With friends, even the smallest moments become beautiful stories. 🤗🥳🫠</p>
+
+
+            <div class="highlight-quote">
+                🤍 Thank you for being my safe place, my happiness, my strength, and my forever vibe. 🥀🤩👥
+            </div>
+
+
+            <p>🫂 No matter how life changes, real friends stay the same. 🥺🫵🌜</p>
+
+
+            <p>✨ Forever thankful for friends like you. 💞👯‍♀️🌈</p>
+        </div>
+
+
+        <!-- Bottom Urdu Wish Section -->
+        <div class="urdu-text">
+            🌙💞 *_دوستی ہمیشہ کے لیے_* 💞🌙<br>
+            ✨ *_دوست وہ نعمت ہوتے ہیں جو زندگی کو خوبصورت بنا دیتے ہیں_*🤌🏻🌼🌝<br>
+            🤍 *_جو ہنسی میں ساتھ دیں، اور آنسوؤں میں سہارا بنیں_*🥹🪷🫀
+        </div>
+
+
+        <div class="footer-note">
+            Here's to 2 Years and Forever to Go! 🥂💖
+        </div>
+    </div>
+
+
+    <script>
+        function checkPassword() {
+            const correctPassword = "2710"; 
+            const userPassword = document.getElementById("passwordInput").value;
+            const errorMsg = document.getElementById("error-msg");
+
+
+            if (userPassword === correctPassword) {
+                document.getElementById("lockScreen").classList.add("hidden");
+                document.getElementById("mainContent").classList.remove("hidden");
+            } else {
+                errorMsg.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
